@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Kids Learning Center</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            background: linear-gradient(to right, #7f16ac, #007bff);
+            color: #fff;
+            padding: 20px;
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .header h1{
+            margin: 0;
+            font-size: 2em;
+            font-weight:600;
+        }
+        .feedback-container{
+            max-width: 600px;
+            margin: 40px auto 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(15, 179, 97, 0.1);
+        }
+        .form-group{
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label{
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea{
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus{
+            border: 1px solid #1f8e5a;
+            box-shadow: 0 0 5px rgba(21, 125, 235, 0.5);
+            background: linear-gradient(to right, #7f16ac, #007bff);
+            outline: none;
+        }
+        .btn-submit{
+            background: linear-gradient(to right, #7f16ac, #007bff);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-submit{
+            transition: box-shadow 0.3s;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+        .btn-submit:hover{
+            background: linear-gradient(to right, #7f16ac, #0056b3);
+            color: #fff;
+            border-color: #37414d;
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            outline: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+ <div class="header">
+    <h1>Give Your Feedback</h1>
+ </div>
+ <div class="feedback-container">
+    <form id="feedbackForm">
+        <div class="form-group">
+        <label for="fname">Your Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+       <label for="fsubject">Subject:</label>
+       <select id="fsubject">
+        <option>Math</option>
+        <option>English</option>
+        <option>Science</option>
+       </select>
+    </div>
+    <div class="form-group">
+        <label for="fmessage">Feedback</label>
+        <textarea id="fmessage" rows="4" placeholder="Write your feedback here... " required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Submit Feedback</button>
+    </form>
+    <p id="foutput" class="output"></p>
+    <script src="script.js"></script>
+ </div> 
+</body>
+</html>

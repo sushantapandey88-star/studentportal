@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Kids Learning Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #65ade4;
+        }
+        header {
+            background-color: #c91b1b;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        .content {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        form p{
+            background-color: #b5bdef;
+            color:black;
+        } 
+        h2{
+            text-align: center;
+            color:rgb(168, 104, 26);
+        }
+        h1{
+            text-align: center;
+            color:rgb(34, 31, 27);
+        }
+    </style>
+</head>
+<body style="background-color: #65ade4;" text-align="center">
+<header>
+    <h1>Quiz Kids Learning Portal</h1>
+</header>
+<div class="content">
+    <h2>Quiz Questions</h2>
+    <form id="quizform">
+      <p><strong> 1. What is 15 + 28?</strong>
+      <br>
+      <input type="radio" name="q1" value="a">33
+      <br>
+      <input type="radio" name="q1" value="b">43
+      <br>
+      <input type="radio" name="q1" value="c">45
+      </p>
+      <p><strong>2. What is the fraction for half?</strong>
+      <br>
+      <input type="radio" name="q2" value="a">1/2
+      <br>
+      <input type="radio" name="q2" value="b">1/3
+      <br>
+      <input type="radio" name="q2" value="c">2/3
+      </p>
+            <p><strong>3. A triangle has how many sides?</strong>
+      <br>
+      <input type="radio" name="q3" value="a">2
+      <br>
+      <input type="radio" name="q3" value="b">3
+      <br>
+      <input type="radio" name="q3" value="c">4
+      </p>
+            <p><strong>4. Which of these is a noun?</strong>
+      <br>
+      <input type="radio" name="q4" value="a">quickly
+      <br>
+      <input type="radio" name="q4" value="b">run
+      <br>
+      <input type="radio" name="q4" value="c">school
+    </p>
+    <p><strong>5. Choose the correct verb:</strong>
+      <br>
+      <input type="radio" name="q5" value="a">apple
+      <br>
+      <input type="radio" name="q5" value="b">play
+      <br>
+      <input type="radio" name="q5" value="c">big
+      </p>
+      <p><strong>6. What type of sentence is “Wow! That’s amazing!”?</strong>
+      <br>
+      <input type="radio" name="q6" value="a">Declarative
+      <br>
+      <input type="radio" name="q6" value="b">Interrogative
+      <br>
+      <input type="radio" name="q6" value="c">Exclamatory
+      </p>
+      <p><strong>7. What part of the plant makes food?</strong>
+      <br>
+      <input type="radio" name="q7" value="a">Roots
+      <br>
+      <input type="radio" name="q7" value="b">Leaf
+      <br>
+      <input type="radio" name="q7" value="c">Stem
+      </p>
+     <p><strong>8. Water boils at what temperature?</strong>
+      <br>
+      <input type="radio" name="q8" value="a">0°C
+      <br>
+      <input type="radio" name="q8" value="b">50°C
+      <br>
+      <input type="radio" name="q8" value="c">100°C
+      </p>
+      <p><strong>9. Which gas do we breathe in?</strong>
+      <br>
+      <input type="radio" name="q9" value="a">Carbon Dioxide
+      <br>
+      <input type="radio" name="q9" value="b">Oxygen
+      <br>
+      <input type="radio" name="q9" value="c">Nitrogen
+      </p>
+      <p><strong>10. The Sun is a:</strong>
+      <br>
+      <input type="radio" name="q10" value="a">Planet
+      <br>
+      <input type="radio" name="q10" value="b">Star
+      <br>
+      <input type="radio" name="q10" value="c">Moon
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+   <p id="result" style="font-weight: bold; margin-top: 20px;"></p>
+</div>
+ <footer style="background-color:aliceblue; color: rgb(0, 0, 0); text-align: center; padding: 10px;">
+        <p>You're doing great! Keep practicing.</p>
+    </footer>
+    <script>
+      document.getElementById('quizform').onsubmit = function(e) {
+      e.preventDefault(); // Prevent page reload on submit
+      let score = 0;
+      // Correct answers key
+      const answers = {
+        q1: 'b',
+        q2: 'a',
+        q3: 'b',
+        q4: 'c',
+        q5: 'b',
+        q6: 'c',
+        q7: 'b',
+        q8: 'c',
+        q9: 'b',
+        q10: 'b'
+      };
+      // Iterate through each question to tally the score
+      for (let i = 1; i <= 10; i++) {
+        const q = document.querySelector('input[name="q'+i+'"]:checked');
+        if (q && q.value === answers['q'+i]) score++;
+      }
+      // Display the result message
+      document.getElementById('result').innerText = `You scored ${score} out of 10!`;
+    };
+</script>
+</body>
+</html>
